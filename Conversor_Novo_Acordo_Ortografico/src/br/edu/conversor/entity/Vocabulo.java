@@ -1,11 +1,14 @@
 package br.edu.conversor.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
-@Table(name="vocabulo"
+@Table(name="vocabulos"
     ,catalog="novo_acordo"
 )
 public class Vocabulo  implements java.io.Serializable {
@@ -15,7 +18,8 @@ public class Vocabulo  implements java.io.Serializable {
 	private String nm_vocabulo_antigo;
      
 	private String nm_vocabulo_novo;
- 
+	
+	@Id @GeneratedValue(strategy=IDENTITY)
     @Column(name="id_vocabulo", unique=true, nullable=false)
     public Integer getId_vocabulo() {
         return this.id_vocabulo;

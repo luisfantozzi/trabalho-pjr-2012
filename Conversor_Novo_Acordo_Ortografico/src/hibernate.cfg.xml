@@ -9,7 +9,7 @@
     <property name="hibernate.connection.password">123456</property>
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.current_session_context_class">thread</property>
-    <mapping class="br.edu.conversor.bean.Vocabulo"/>
+    <mapping class="br.edu.conversor.entity.Vocabulo"/>
 
   </session-factory>
 </hibernate-configuration>
