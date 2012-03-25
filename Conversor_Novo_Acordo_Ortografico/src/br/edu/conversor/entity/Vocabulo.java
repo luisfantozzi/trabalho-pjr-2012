@@ -10,27 +10,24 @@ import javax.persistence.Column;
 )
 public class Vocabulo  implements java.io.Serializable {
 
-
-     private Integer id_vocabulo;
+    private Integer id_vocabulo;
  
-
 	private String nm_vocabulo_antigo;
-     private String nm_vocabulo_novo;
+     
+	private String nm_vocabulo_novo;
  
-    
     @Column(name="id_vocabulo", unique=true, nullable=false)
-    public Integer getid_vocabulo() {
+    public Integer getId_vocabulo() {
         return this.id_vocabulo;
     }
     
-   
     @Column(name="nm_vocabulo_antigo", nullable=false, length=50)
-    public String getnm_vocabulo_antigo() {
+    public String getNm_vocabulo_antigo() {
         return this.nm_vocabulo_antigo;
     }
     
     @Column(name="nm_vocabulo_novo", nullable=false, length=50)
-    public String getnm_vocabulo_novo() {
+    public String getNm_vocabulo_novo() {
         return this.nm_vocabulo_novo;
     }
     
@@ -49,8 +46,5 @@ public class Vocabulo  implements java.io.Serializable {
 		this.nm_vocabulo_novo = nm_vocabulo_novo;
 	}
     	
-    
-
-
 }
 
