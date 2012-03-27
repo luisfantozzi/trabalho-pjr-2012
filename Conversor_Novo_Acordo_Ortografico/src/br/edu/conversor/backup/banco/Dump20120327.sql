@@ -35,7 +35,7 @@ CREATE TABLE `vocabulos` (
   `nm_vocabulo_antigo` varchar(50) NOT NULL,
   `nm_vocabulo_novo` varchar(50) NOT NULL,
   PRIMARY KEY (`id_vocabulo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,6 +44,7 @@ CREATE TABLE `vocabulos` (
 
 LOCK TABLES `vocabulos` WRITE;
 /*!40000 ALTER TABLE `vocabulos` DISABLE KEYS */;
+INSERT INTO `vocabulos` VALUES (1,'idéia','ideia'),(2,'assembléia','assembleia'),(3,'auto-estima','autoestima');
 /*!40000 ALTER TABLE `vocabulos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-03-24 18:56:45
+-- Dump completed on 2012-03-27 13:50:04
