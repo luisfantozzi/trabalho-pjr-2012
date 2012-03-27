@@ -3,16 +3,36 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
  xmlns:h="http://java.sun.com/jsf/html"
- xmlns:ui="http://java.sun.com/jsf/facelets">
+ xmlns:ui="http://java.sun.com/jsf/facelets"
+ xmlns:p="http://primefaces.org/ui">
 
 <h:head>
- <title>Vocábulos Gravados</title>
+ <title>Exemplos</title>
 </h:head>
+
  <h:body>
+ <h1>Exemplo 1 — Recebendo Vocábulos do Banco </h1>
  <ui:repeat var="vocabulos" value="#{vocabuloController.listarvocabulos}" varStatus="status">
  <h:outputText value="Vocábulo #{status.index + 1}: "/>
  <h:outputText value="#{vocabulos.nm_vocabulo_novo}"/>
  <br/>
  </ui:repeat>
- </h:body>
+ 
+ <br/>
+ <br/>
+ <br/>
+ <h1>Exemplo 2 — FileUploader (Primefaces) </h1>
+ <h:form enctype="multipart/form-data">
+
+    <p:fileUpload fileUploadListener="#{fileUploadController.handleFileUpload}"
+            mode="advanced"
+            update="messages"
+            auto="true"
+            sizeLimit="100000" 
+            allowTypes="/(\.|\/)(gif|jpe?g|png)$/"/>
+
+    <p:growl id="messages" showDetail="true"/>
+
+</h:form>
+</h:body>
  </html>
