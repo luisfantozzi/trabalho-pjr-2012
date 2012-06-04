@@ -7,32 +7,22 @@
  xmlns:p="http://primefaces.org/ui">
 
 <h:head>
- <title>Exemplos</title>
+ <title>Conversor de Arquivos e Textos para a Nova Ortografia</title>
 </h:head>
 
- <h:body>
- <h1>Exemplo 1 — Recebendo Vocábulos do Banco </h1>
- <ui:repeat var="vocabulos" value="#{vocabuloController.listarvocabulos}" varStatus="status">
- <h:outputText value="Vocábulo #{status.index + 1}: "/>
- <h:outputText value="#{vocabulos.nm_vocabulo_novo}"/>
- <br/>
- </ui:repeat>
- 
- <br/>
- <br/>
- <br/>
- <h1>Exemplo 2 — FileUploader (Primefaces) </h1>
- <h:form enctype="multipart/form-data">
-
-    <p:fileUpload fileUploadListener="#{fileUploadController.handleFileUpload}"
-            mode="advanced"
-            update="messages"
-            auto="true"
-            sizeLimit="100000" 
-            allowTypes="/(\.|\/)(gif|jpe?g|png)$/"/>
-
-    <p:growl id="messages" showDetail="true"/>
-
-</h:form>
+<h:body>
+ <h:form enctype="multipart/form-data">  
+    <p:fileUpload fileUploadListener="#{fileUploadController.handleFileUpload}"  
+            mode="advanced"      
+            invalidFileMessage="Arquivo Inválido"
+            label="Escolher"         
+            update="messages"  
+            auto="true"  
+            allowTypes="/(\.|\/)(docx|doc|txt|pdf)/"
+          	/>  
+    <p:growl id="messages" showDetail="true"/>  
+</h:form> 
 </h:body>
+
+
  </html>
