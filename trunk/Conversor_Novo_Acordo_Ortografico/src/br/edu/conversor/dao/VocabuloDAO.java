@@ -12,26 +12,23 @@ import br.edu.conversor.connection.CriarConexao;
 import br.edu.conversor.entity.Vocabulo;
 
 
-
-
-
 public class VocabuloDAO {
 	private Session session;
 	private Transaction tx;
 	
-    public VocabuloDAO () //Construtor realiza conexão com o banco
+    public VocabuloDAO () 
     {
     	session= CriarConexao.getSession();
     }
     
     
-    public List Listar() //lista que, por meio de consultas Criteria, lista todos os registros da tabela
+    public List Listar() 
     {
     	Criteria consulta = session.createCriteria(Vocabulo.class); 
     	return consulta.list();
     }
     
-    public List PesquisaVocabulo(String p) //lista que, por meio de consultas Criteria, retorna o termo pesquisado
+    /*public List PesquisaVocabulo(String p) 
     {
     	Criteria consulta = session.createCriteria(Vocabulo.class).add(Restrictions.like("nm_vocabulo_antigo","%" + p + "%")); 
     	return consulta.list();
@@ -39,8 +36,7 @@ public class VocabuloDAO {
     
     public Vocabulo carregaVocabulo(int id)
     {
-    		//Pegamos o objeto Vocabulo pelo seu código
     	return (Vocabulo) session.load(Vocabulo.class, id );
     }
-
+ 	*/
 }

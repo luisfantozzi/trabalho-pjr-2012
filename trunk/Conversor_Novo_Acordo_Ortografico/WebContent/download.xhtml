@@ -13,22 +13,18 @@
 </h:head>
 <h:body>
 <div class="container">
-	<h1>Conversor de Arquivos e Textos para o Acordo Ortográfico de 1990</h1>
+	<h1>Conversor de Arquivos e Textos para o Acordo Ortográfico da Língua Portuguesa de 1990</h1>
 	 <h:form enctype="multipart/form-data"> 
-	 <div class="box-upload"> 
-	    <p:fileUpload fileUploadListener="#{fileUploadController.handleFileUpload}"  
-	            mode="advanced"      
-	            invalidFileMessage="Arquivo Inválido"
-	            label="Escolher"         
-	            update="messages"  
-	            auto="true"  
-	            allowTypes="/(\.|\/)(docx|doc|txt|pdf)/"
-	          	/>  
+	 <div class="box-download"> 
+		<p:commandLink ajax="false" title="Download">  
+                <p:graphicImage value="/img/download_icon.png" />  
+                <p:fileDownload value="#{fileDownloadController.file}"   />  
+        </p:commandLink>  
 	  </div>
-	    <p:growl id="messages" showDetail="true"/>  
+	    <p:growl id="messages" showDetail="true"/> 
+	     
 	</h:form> 
 </div>
 </h:body>
-
-
- </html>
+</html>	   
+	    

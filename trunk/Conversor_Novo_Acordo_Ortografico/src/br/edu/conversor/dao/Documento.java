@@ -21,7 +21,10 @@ public class Documento {
 	
 	File file;
 	
-	//Retorna Caminho da Aplicação
+	public File getFile() {
+		return file;
+	}
+
 	public String ServerContext()
 	{
 		ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
@@ -63,14 +66,23 @@ public class Documento {
 	        {
 	           String textinLine = reader.readLine();
 	            if(textinLine==null)
-	                break;
-	            bloco.append(textinLine);
+	                break;        
+	           
+	            bloco.append(textinLine+"/~~/*/~~/");
+	           
 	        }
 			
+	        
 	        bloco = ConverterBlocos.ConverterBloco(bloco);
 	        
 	        BufferedWriter saida = new BufferedWriter(new FileWriter(file));
-	        saida.write(bloco.toString());
+	        
+	        for(String texto : bloco.toString().split("/~~/"))
+	        	if(texto.equals("*"))
+	        		saida.newLine();		
+	        	else
+	        		saida.write(texto);
+	        	
 	        saida.close();
         }
         

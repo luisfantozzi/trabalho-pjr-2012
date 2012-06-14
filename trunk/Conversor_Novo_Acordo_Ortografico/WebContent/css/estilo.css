@@ -1,0 +1,8 @@
+h1 {
+	font-family: 'Philosopher', sans-serif;
+	font-size: 24px;
+}
+.wrapper { width: 100%; height: auto;  }
+.container { width: 1000px; margin: auto; }
+.box-upload { width: 100%;  }
+.box-download {margin: auto; display: block; text-align: center; }

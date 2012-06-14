@@ -18,7 +18,8 @@ public class FileUploadController    {
 	    	FacesMessage msg = new FacesMessage("Upload Realizado", event.getFile().getFileName() + " foi enviado.");  
 	        FacesContext.getCurrentInstance().addMessage(null, msg);
 	        arquivo.Converter();
-	        
+	        FileDownloadController.setArquivo(arquivo.getFile());
+	        FacesContext.getCurrentInstance().getExternalContext().redirect("download.xhtml");
 	    }
     	catch(Exception e)
     	{
