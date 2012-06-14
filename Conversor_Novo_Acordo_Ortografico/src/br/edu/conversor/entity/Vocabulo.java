@@ -13,41 +13,41 @@ import static javax.persistence.GenerationType.IDENTITY;
 )
 public class Vocabulo  implements java.io.Serializable {
 
-    private Integer id_vocabulo;
+    private Integer id;
  
-	private String nm_vocabulo_antigo;
+	private String vocabuloAntigo;
      
-	private String nm_vocabulo_novo;
+	private String vocabuloNovo;
 	
 	@Id @GeneratedValue(strategy=IDENTITY)
     @Column(name="id_vocabulo", unique=true, nullable=false)
-    public Integer getId_vocabulo() {
-        return this.id_vocabulo;
+    public Integer getId() {
+        return this.id;
     }
     
     @Column(name="nm_vocabulo_antigo", nullable=false, length=50)
-    public String getNm_vocabulo_antigo() {
-        return this.nm_vocabulo_antigo;
+    public String getVocabuloAntigo() {
+        return this.vocabuloAntigo;
     }
     
     @Column(name="nm_vocabulo_novo", nullable=false, length=50)
-    public String getNm_vocabulo_novo() {
-        return this.nm_vocabulo_novo;
+    public String getVocabuloNovo() {
+        return this.vocabuloNovo;
     }
     
     
-    public void setId_vocabulo(int id_vocabulo) {
-		this.id_vocabulo = id_vocabulo;
+    public void setId(int id) {
+		this.id = id;
 	}
 
 
-	public void setNm_vocabulo_antigo(String nm_vocabulo_antigo) {
-		this.nm_vocabulo_antigo = nm_vocabulo_antigo;
+	public void setVocabuloAntigo(String vocabuloAntigo) {
+		this.vocabuloAntigo = vocabuloAntigo;
 	}
 
 
-	public void setNm_vocabulo_novo(String nm_vocabulo_novo) {
-		this.nm_vocabulo_novo = nm_vocabulo_novo;
+	public void setVocabuloNovo(String vocabuloNovo) {
+		this.vocabuloNovo = vocabuloNovo;
 	}
     	
 }
