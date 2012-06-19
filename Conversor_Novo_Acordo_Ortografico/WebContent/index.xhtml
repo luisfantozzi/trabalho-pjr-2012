@@ -15,14 +15,17 @@
 <div class="container">
 	<h1>Conversor de Arquivos e Textos para o Acordo Ortográfico de 1990</h1>
 	 <h:form enctype="multipart/form-data"> 
+	 Este conversor aceita arquivos dos tipos DOC, DOCX, PDF, HTML e TXT. Após o <i>upload</i>, aguarde a conversão: você será redirecionado à página de <i>downloads</i>.
 	 <div class="box-upload"> 
 	    <p:fileUpload fileUploadListener="#{fileUploadController.handleFileUpload}"  
-	            mode="advanced"      
+	            mode="advanced"
+	            multiple="false"      
 	            invalidFileMessage="Arquivo Inválido"
+	            invalidSizeMessage="Arquivo Vazio"
 	            label="Escolher"         
 	            update="messages"  
 	            auto="true"  
-	            allowTypes="/(\.|\/)(docx|doc|txt|pdf)/"
+	            allowTypes="/(\.|\/)(docx|doc|txt|pdf)$/"
 	          	/>  
 	  </div>
 	    <p:growl id="messages" showDetail="true"/>  

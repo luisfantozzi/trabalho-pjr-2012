@@ -27,7 +27,7 @@ public class FileDownloadController {
     	if(arquivo !=null)
     	{
     	InputStream stream = new FileInputStream(arquivo.getAbsolutePath());  
-    	return new DefaultStreamedContent(stream,"application/"+arquivo.getName().substring(arquivo.getName().lastIndexOf(".")+1), arquivo.getName().substring(arquivo.getName().indexOf("_") + 1));  
+    	return new DefaultStreamedContent(stream,"application/"+arquivo.getName().substring(arquivo.getName().lastIndexOf(".")+1), "[Convertido]"+arquivo.getName().substring(arquivo.getName().indexOf("_") + 1));  
     	}
     	else return null;
     	   
