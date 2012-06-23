@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:h="http://java.sun.com/jsf/html"
+ xmlns:ui="http://java.sun.com/jsf/facelets"
+ xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+ <title>Conversor de Arquivos e Textos para a Nova Ortografia</title>
+ <link href='http://fonts.googleapis.com/css?family=Philosopher:400,700' rel='stylesheet' type='text/css'/>
+ <link rel="stylesheet" type="text/css" href="css/estilo.css" />  
+</h:head>
+
+<h:body>
+<div class="container">
+	<h1>Conversor de Arquivos e Textos para o Acordo Ortográfico de 1990</h1>
+	<h:form id="caixa" enctype="multipart/form-data"> 
+	 Digite o seu texto na caixa da esquerda e clique em <i>Converter</i>. Você receberá o texto convertido na caixa da direita.
+	 
+	 <div class="box-textovelho">
+	 <p:inputTextarea value="#{textConversionController.textoVelho}"/>
+	 </div>
+	
+	  
+	 <div class="box-textonovo">
+	 <p:inputTextarea value="#{textConversionController.textoNovo}"/>
+	 </div>
+	 
+	 <p:commandButton value="Converter" update="caixa" id="ajax"  
+             actionListener="#{textConversionController.converter}" />  
+     
+	
+	 
+	</h:form>
+</div>
+</h:body>
+
+
+ </html>
