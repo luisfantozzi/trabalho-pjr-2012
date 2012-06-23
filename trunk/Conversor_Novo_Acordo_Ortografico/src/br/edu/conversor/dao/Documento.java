@@ -51,7 +51,6 @@ public class Documento {
 					out.write(in.read());  
 			
 			out.close();
-
 			
 	}
 	
@@ -59,31 +58,24 @@ public class Documento {
 	{
 	    if(file.getName().endsWith(".txt")) 
         {
-			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
+	    	FileInputStream fileinputstream = new FileInputStream(file);
+	    	InputStreamReader inputstreamreader = new InputStreamReader(fileinputstream);
+	    	BufferedReader reader = new BufferedReader(inputstreamreader);
 	        StringBuffer bloco = new StringBuffer();
-	         
 	        while(true)
 	        {
 	           String textinLine = reader.readLine();
 	            if(textinLine==null)
 	                break;        
 	           
-	            bloco.append(textinLine+"/~~/*/~~/");
+	            bloco.append(textinLine+"\n");
 	           
-	        }
-			
-	        
-	        bloco = ConverterBlocos.ConverterBloco(bloco);
-	        
+	        }        
 	        BufferedWriter saida = new BufferedWriter(new FileWriter(file));
-	        
-	        for(String texto : bloco.toString().split("/~~/"))
-	        	if(texto.equals("*"))
-	        		saida.newLine();		
-	        	else
-	        		saida.write(texto);
-	        	
+	        saida.write(Converter.ConverterTexto(bloco.toString()));
 	        saida.close();
+	        reader.close();
+	        inputstreamreader.close();
         }
         
 	}

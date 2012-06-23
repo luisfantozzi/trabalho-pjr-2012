@@ -6,3 +6,5 @@ h1 {
 .container { width: 1000px; margin: auto; }
 .box-upload { width: 100%;  }
 .box-download {margin: auto; display: block; text-align: center; }
+.box-textovelho{ width: 45%; float: left; display: block; text-align: center;}
+.box-textonovo{ width: 45%; float: right; display: block; text-align: center;}
