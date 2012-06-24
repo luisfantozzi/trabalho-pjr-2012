@@ -72,7 +72,12 @@ public class Documento {
 	           
 	        }        
 	        BufferedWriter saida = new BufferedWriter(new FileWriter(file));
-	        saida.write(Converter.ConverterTexto(bloco.toString()));
+	        for(String texto: Converter.ConverterTexto(bloco.toString()).split("\n"))
+	        {
+	        	saida.write(texto);
+	        	saida.newLine();
+	        }
+	        
 	        saida.close();
 	        reader.close();
 	        inputstreamreader.close();
