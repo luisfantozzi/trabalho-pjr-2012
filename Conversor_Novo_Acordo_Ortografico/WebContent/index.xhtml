@@ -15,7 +15,7 @@
 <div class="container">
 	<div class="clear"></div>
 	<a href="index.xhtml" title="CONAO"><img src="img/logo.png" alt="CANAO" width="418" height="117" class="logo" /></a>
-	<h1 class="mLeft">Conversor de Textos e Arquivos para o Novo Acordo Ortográfico</h1>
+	<h1>Conversor de Arquivos para o Novo Acordo Ortográfico</h1>
 	 <p class="mLeft">Este conversor aceita arquivos dos tipos DOC, DOCX, PDF, HTML e TXT. Após o <i>upload</i>, aguarde a conversão: você será redirecionado à página de <i>downloads</i>.</p>
 	 <p class="mLeft">Selecione o arquivo que deseja converter:</p>
 	 <h:form enctype="multipart/form-data"> 
@@ -32,7 +32,24 @@
 	          	/>  
 	  </div>
 	    <p:growl id="messages" showDetail="true"/>  
-	</h:form> 
+	</h:form>
+	<h1>Conversor de Textos para o Novo Acordo Ortográfico</h1> 
+	<p class="mLeft">Digite o seu texto na caixa da esquerda e clique em <i>Converter</i>. Você receberá o texto convertido na caixa da direita.</p>
+	 <h:form id="caixa" enctype="multipart/form-data"> 
+	 <div class="box-textovelho">
+	 <p:inputTextarea value="#{textConversionController.textoVelho}"/>
+	 <p:commandButton value="Converter" update="caixa" id="ajax"  
+             actionListener="#{textConversionController.converter}" />  
+	 </div>
+	
+	  
+	 <div class="box-textonovo">
+	 <p:inputTextarea value="#{textConversionController.textoNovo}"/>
+	 <p:commandButton value="Converter" update="caixa" id="limpar"  
+             actionListener="#{textConversionController.converter}" />
+	 </div>
+	 
+	</h:form>
 	<div class="clear"></div>
 </div>
 </h:body>
