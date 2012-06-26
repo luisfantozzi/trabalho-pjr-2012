@@ -1,10 +1,18 @@
-h1 {
-	font-family: 'Philosopher', sans-serif;
-	font-size: 24px;
-}
 .wrapper { width: 100%; height: auto;  }
-.container { width: 1000px; margin: auto; }
-.box-upload { width: 100%;  }
-.box-download {margin: auto; display: block; text-align: center; }
+.container { width: 1000px; margin: auto; height: 790px; background-color: #ebebeb; padding: 10px; }
+.clear { clear: both; width: 100%; height: 1px; }
+.mLeft { margin-left: 20px; }
+.mRight { margin-right: 20px; }
+.fRight {float:right;}
+.fLeft {float: left; }
+body { background: url("../img/bg.png") repeat-x; color: #514e4e; font-family: 'Philosopher', sans-serif; }
+h1 { font-size: 34px;}
+p { font-size: 18px; }
+span.down {font-size: 22px; margin-top: 100px; text-decoration: underline;}
+.box-upload { width: 100%; }
+.box-download { width: 432px; height: 600px; }
 .box-textovelho{ width: 45%; float: left; display: block; text-align: center;}
 .box-textonovo{ width: 45%; float: right; display: block; text-align: center;}
+.box-textovelho, .box-textonovo { margin-top: 20px; }
+.box-textovelho textarea, .box-textonovo textarea { width: 300px; height: 150px; }
+button {position: absolute; left: 435px; top: -40px; }

@@ -13,9 +13,12 @@
 </h:head>
 <h:body>
 <div class="container">
-	<h1>Conversor de Arquivos e Textos para o Acordo Ortográfico da Língua Portuguesa de 1990</h1>
+	<div class="clear"></div>
+	<a href="index.xhtml" title="CONAO"><img src="img/logo.png" alt="CANAO" width="418" height="117" class="logo" /></a>
+	<h1 class="mLeft">Conversor de Textos e Arquivos para o Novo Acordo Ortográfico</h1>
+	 <span class="down fLeft mLeft">Clique no documento ao lado para fazer o download:</span>
 	 <h:form enctype="multipart/form-data"> 
-	 <div class="box-download"> 
+	 <div class="box-download fRight mRight"> 
 		<p:commandLink ajax="false" title="Download">  
                 <p:graphicImage value="/img/download_icon.png" />  
                 <p:fileDownload value="#{fileDownloadController.file}"   />  

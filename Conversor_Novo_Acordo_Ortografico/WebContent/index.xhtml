@@ -13,9 +13,12 @@
 </h:head>
 <h:body>
 <div class="container">
-	<h1>Conversor de Arquivos e Textos para o Acordo Ortográfico de 1990</h1>
+	<div class="clear"></div>
+	<a href="index.xhtml" title="CONAO"><img src="img/logo.png" alt="CANAO" width="418" height="117" class="logo" /></a>
+	<h1 class="mLeft">Conversor de Textos e Arquivos para o Novo Acordo Ortográfico</h1>
+	 <p class="mLeft">Este conversor aceita arquivos dos tipos DOC, DOCX, PDF, HTML e TXT. Após o <i>upload</i>, aguarde a conversão: você será redirecionado à página de <i>downloads</i>.</p>
+	 <p class="mLeft">Selecione o arquivo que deseja converter:</p>
 	 <h:form enctype="multipart/form-data"> 
-	 Este conversor aceita arquivos dos tipos DOC, DOCX, PDF, HTML e TXT. Após o <i>upload</i>, aguarde a conversão: você será redirecionado à página de <i>downloads</i>.
 	 <div class="box-upload"> 
 	    <p:fileUpload fileUploadListener="#{fileUploadController.handleFileUpload}"  
 	            mode="advanced"
@@ -30,6 +33,7 @@
 	  </div>
 	    <p:growl id="messages" showDetail="true"/>  
 	</h:form> 
+	<div class="clear"></div>
 </div>
 </h:body>
 
