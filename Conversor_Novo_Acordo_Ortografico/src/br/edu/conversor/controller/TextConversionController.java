@@ -29,4 +29,8 @@ public class TextConversionController {
 		textoNovo = Converter.ConverterTexto(textoVelho);
 	}
 	
+	public void clear(ActionEvent actionEvent)
+	{
+		textoNovo = textoVelho = "";
+	}
 }

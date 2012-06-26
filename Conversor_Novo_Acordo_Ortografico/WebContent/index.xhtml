@@ -38,15 +38,15 @@
 	 <h:form id="caixa" enctype="multipart/form-data"> 
 	 <div class="box-textovelho">
 	 <p:inputTextarea value="#{textConversionController.textoVelho}"/>
-	 <p:commandButton value="Converter" update="caixa" id="ajax"  
-             actionListener="#{textConversionController.converter}" />  
+	 <p:commandButton value="Limpar" update="caixa" id="limpar"  
+             actionListener="#{textConversionController.clear}" /> 
 	 </div>
 	
 	  
 	 <div class="box-textonovo">
 	 <p:inputTextarea value="#{textConversionController.textoNovo}"/>
-	 <p:commandButton value="Converter" update="caixa" id="limpar"  
-             actionListener="#{textConversionController.converter}" />
+	 <p:commandButton value="Converter" update="caixa" id="ajax"  
+             actionListener="#{textConversionController.converter}" />  
 	 </div>
 	 
 	</h:form>
