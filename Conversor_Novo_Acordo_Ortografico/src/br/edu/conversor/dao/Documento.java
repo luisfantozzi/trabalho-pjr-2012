@@ -15,6 +15,8 @@ import javax.faces.context.FacesContext;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.poi.hwpf.HWPFDocument;
+import org.apache.poi.hwpf.extractor.WordExtractor;
 import org.primefaces.model.UploadedFile;
 
 public class Documento {
@@ -56,7 +58,7 @@ public class Documento {
 	
 	public void Converter() throws Exception
 	{
-	    if(file.getName().endsWith(".txt")) 
+	    if(file.getName().endsWith(".txt") || file.getName().endsWith(".html")) 
         {
 	    	FileInputStream fileinputstream = new FileInputStream(file);
 	    	InputStreamReader inputstreamreader = new InputStreamReader(fileinputstream);
@@ -82,6 +84,8 @@ public class Documento {
 	        reader.close();
 	        inputstreamreader.close();
         }
-        
+	    else 
+	    if(file.getName().endsWith(".doc"))
+	    	Converter.ConverterDOC(file);
 	}
 }
