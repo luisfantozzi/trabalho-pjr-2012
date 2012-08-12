@@ -9,6 +9,9 @@ import java.util.List;
 import org.apache.poi.hwpf.HWPFDocument;
 import org.apache.poi.hwpf.extractor.WordExtractor;
 import org.apache.poi.hwpf.usermodel.Range;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.XWPFRun;
 
 import br.edu.conversor.entity.Vocabulo;
 
@@ -93,6 +96,51 @@ public class Converter {
 		
 			FileOutputStream fileoutputstream = new FileOutputStream(file);
 			hwpfdocument.write(fileoutputstream);
+			
+			fileinputstream.close();
+			fileoutputstream.close();
+			
+	}
+	public static void ConverterDOCX(File file) throws Exception
+	{
+			FileInputStream fileinputstream = new FileInputStream(file);
+			XWPFDocument xwpfdocument = new XWPFDocument(fileinputstream);
+			List<XWPFParagraph> paragrafos = xwpfdocument.getParagraphs();
+			
+			
+			for (XWPFParagraph paragrafo: paragrafos)
+			{
+			
+				
+			String texto = paragrafo.getText();
+			String palavra ="";
+			
+			for (XWPFRun run: paragrafo.getRuns())
+				run.setText("",0);
+		
+			
+			int indice = -1;
+			for(char caracter : texto.toString().toCharArray() )
+				if(Character.isLetter(caracter) || caracter =='-')
+					palavra += caracter;
+				else
+				 if(palavra.trim().length()!=0)	
+				 {
+					indice = palavrasAntigas.indexOf(palavra.toLowerCase());
+					if (indice>=0)
+						texto =texto.replace(palavra, CaseCheck(palavra,palavrasNovas.get(indice)));
+					palavra = "";
+				 }	
+			indice = palavrasAntigas.indexOf(palavra.toLowerCase());
+			if (indice>=0)
+				texto =texto.replace(palavra, CaseCheck(palavra,palavrasNovas.get(indice)));
+			
+			paragrafo.createRun().setText(texto);
+			
+			}
+			
+			FileOutputStream fileoutputstream = new FileOutputStream(file);
+			xwpfdocument.write(fileoutputstream);
 			
 			fileinputstream.close();
 			fileoutputstream.close();

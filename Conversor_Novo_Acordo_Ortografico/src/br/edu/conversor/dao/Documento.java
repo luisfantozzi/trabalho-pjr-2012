@@ -87,5 +87,8 @@ public class Documento {
 	    else 
 	    if(file.getName().endsWith(".doc"))
 	    	Converter.ConverterDOC(file);
+	    else if(file.getName().endsWith(".docx"))
+	    	Converter.ConverterDOCX(file);
+	    	
 	}
 }
