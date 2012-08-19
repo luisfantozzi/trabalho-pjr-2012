@@ -51,9 +51,9 @@ public class Converter {
 		
 		String palavra ="";
 		int indice = -1;
-		for(char caracter : texto.toString().toCharArray() )
-			if(Character.isLetter(caracter) || caracter =='-')
-				palavra += caracter;
+		for(char caractere : texto.toString().toCharArray() )
+			if(Character.isLetter(caractere) || caractere =='-')
+				palavra += caractere;
 			else
 			 if(palavra.trim().length()!=0)
 			 {
@@ -79,9 +79,9 @@ public class Converter {
 			
 			String palavra ="";
 			int indice = -1;
-			for(char caracter : texto.toString().toCharArray() )
-				if(Character.isLetter(caracter) || caracter =='-')
-					palavra += caracter;
+			for(char caractere : texto.toString().toCharArray() )
+				if(Character.isLetter(caractere) || caractere =='-')
+					palavra += caractere;
 				else
 				 if(palavra.trim().length()!=0)
 				 {
@@ -120,9 +120,9 @@ public class Converter {
 		
 			
 			int indice = -1;
-			for(char caracter : texto.toString().toCharArray() )
-				if(Character.isLetter(caracter) || caracter =='-')
-					palavra += caracter;
+			for(char caractere : texto.toString().toCharArray() )
+				if(Character.isLetter(caractere) || caractere =='-')
+					palavra += caractere;
 				else
 				 if(palavra.trim().length()!=0)	
 				 {
